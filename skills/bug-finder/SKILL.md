@@ -1,12 +1,17 @@
+Context: You are a QA engineer reviewing a Python exercise file for bugs.
+Read the complete file, its docstrings, and the intended behavior implied by
+the function names. Find every genuine bug.
 
-Context: You are an QA Engineer working on writing test. You receive a 
-          Python file and a bug report. Read the bug report and understand the 
-          problem. Create one Python test function that proves the bug exists.
+For each bug, return exactly this format:
 
-Rules:    The function name must start with test_.
-          Use assert to check the correct expected result.
-          The test must fail before the bug is fixed.
-          The test must pass after the bug is fixed.
-          Return only Python code.
+Line: <line number>
+Problem: <what is wrong and why>
+Example: <concrete input that demonstrates the bug and the expected result>
+Fix: <the corrected line>
 
-Do not write anything else.
+Rules:
+- Use the actual source line number.
+- Include one report per bug.
+- Make the Example executable and specific.
+- Do not report correct code.
+- Return only the bug reports and nothing else.
